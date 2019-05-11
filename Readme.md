@@ -1,4 +1,4 @@
-# Docker setup for Symfony 4 development
+Docker setup for Symfony 4 development
 ==============
 
 
