@@ -125,13 +125,13 @@ Just use the `php` command:
 
 ```
 # List php CLI modules:
-./vessel php -m
+$ ./vessel php -m
 
 # Echo "hello world"
-./vessel php -r "echo 'hello world';"
+$ ./vessel php -r "echo 'hello world';"
 
 # Use artisan, because why not?
-./vessel php artisan list
+$ ./vessel php artisan list
 ```
 ### Testing
 
@@ -139,10 +139,10 @@ We can use Vessel to run our tests as well! This is especially useful if you tes
 
 ```
 # Run phpunit tests
-./vessel test
+$ ./vessel test
 
-./vessel test --filter=some.phpunit.filter
-./vessel test tests/Unit/SpecificTest.php
+$ ./vessel test --filter=some.phpunit.filter
+$ ./vessel test tests/Unit/SpecificTest.php
 ```
 
 ### NodeJS/NPM/Yarn/Gulp
@@ -155,7 +155,7 @@ Any Node command can be run, such as `node index.js`.
 
 ```
 # Run nodejs
-./vessel node <cmd>
+$ ./vessel node <cmd>
 ```
 
 #### NPM
@@ -164,10 +164,10 @@ Any NPM command can be run, such as `npm install foo`.
 
 ```
 # Run npm
-./vessel npm <cmd>
+$ ./vessel npm <cmd>
 
 ## Example: install deps
-./vessel npm install
+$ ./vessel npm install
 ```
 
 #### Yarn
@@ -175,23 +175,23 @@ Any NPM command can be run, such as `npm install foo`.
 You may prefer to install and run tasks with Yarn.
 
 ```
-./vessel yarn <cmd>
+$ ./vessel yarn <cmd>
 
 ## Example: install dependencies
-./vessel yarn install
+$ ./vessel yarn install
 
 ## Watch for file changes
-./vessel yarn watch
+$ ./vessel yarn watch
 
 ## Run the dev task
-./vessel yarn run dev
+$ ./vessel yarn run dev
 ```
 
 #### Gulp
 
 If you are using Gulp, you can continue to use that as well.
 ```
-./vessel gulp <cmd>
+$ ./vessel gulp <cmd>
 ```
 
 ### MySQL
@@ -206,7 +206,7 @@ Vessel has a shortcut to allow you to log into MySQL. This will also run use `yo
 
 ```
 # Log into mysql
-./vessel mysql
+$ ./vessel mysql
 ```
 
 #### Exporting the Database
@@ -215,10 +215,10 @@ Vessel has a shortcut to allow you to export the database configured in the `.en
 
 ```
 # Export the database and save it to example.sql
-./vessel dump > ~/Sites/example/example.sql
+$ ./vessel dump > ~/Sites/example/example.sql
 
 # Export the database, gzip it, save it to example.sql.gz
-./vessel dump | gzip > ~/Sites/example/example.sql.gz
+$ ./vessel dump | gzip > ~/Sites/example/example.sql.gz
 ```
 
 ### CLI
@@ -235,12 +235,12 @@ You can run other operations against the MySQL container as well. Here are some 
 # Execute against the "mysql" container
 # the command "mysql -u root -p".
 # This will prompt you for the root password to login.
-./vessel exec mysql mysql -u root -p
+$ ./vessel exec mysql mysql -u root -p
 
 # This is similar to the above command, but it spins up a new
 # container rather than executes a command within a running
 # container. This connects to mysql server at hostname `mysql`.
-./vessel run --rm \
+$ ./vessel run --rm \
     mysql \
     mysql -h mysql -u root -p
 ```
@@ -250,7 +250,7 @@ You can run other operations against the MySQL container as well. Here are some 
 If you want to "log into" your application controller, you can run `bash` inside of it. This is just like SSHing into the application container, except we're just executing a `bash` process inside the already-running container.
 
 ```
-./vessel exec app bash
+$ ./vessel exec app bash
 ```
 
 You'll be running as user root, and can poke around the container. Note that any changes you make will not persist when you stop and restart Vessel.
@@ -259,14 +259,14 @@ You can do the same for some of the other containers as well:
 
 ```
 # Log into the mysql container
-./vessel exec mysql bash
+$ ./vessel exec mysql bash
 ```
 
 Finally, you can use the `ssh` command shortcut as of version `3.1.0`:
 
 ```
-./vessel ssh app
-./vessel ssh mysql
+$ ./vessel ssh app
+$ ./vessel ssh mysql
 ```
 
 This will use `bash` to "log into" either containers. Accessing the `node` container is not supported.
@@ -276,13 +276,18 @@ This will use `bash` to "log into" either containers. Accessing the `node` conta
 You can poke around the instance of Redis using `redis-cli`:
 
 ```
-./vessel exec redis redis-cli
+$ ./vessel exec redis redis-cli
 ```
 
 
 
 
 
+
+```
+
+# Licence
+This package is an open-sourced software licensed under the MIT license.
 
 
 
