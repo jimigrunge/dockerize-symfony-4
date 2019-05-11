@@ -51,13 +51,19 @@ You are now ready to start up the docker image
 
 
 
+```
+$ ./vessel ps
 
-Make sure you adjust `database_host` in `parameters.yml` to the database container alias "db"
+           Name                          Command               State                             Ports
+--------------------------------------------------------------------------------------------------------------------------------
+symfony4-01_app_1             start-container                  Up       0.0.0.0:80->80/tcp
+symfony4-01_elasticsearch_1   /usr/local/bin/docker-entr ...   Up       0.0.0.0:9200->9200/tcp, 9300/tcp, 0.0.0.0:9600->9600/tcp
+symfony4-01_mailhog_1         MailHog                          Up       1025/tcp, 0.0.0.0:8025->8025/tcp
+symfony4-01_mysql_1           docker-entrypoint.sh mysqld      Up       0.0.0.0:3306->3306/tcp, 33060/tcp
+symfony4-01_node_1            node                             Exit 0
+symfony4-01_redis_1           docker-entrypoint.sh redis ...   Up       6379/tcp
 
-Then, run:
 
-```bash
-$ docker-compose up
 ```
 
 
