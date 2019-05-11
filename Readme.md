@@ -46,10 +46,10 @@ $ docker/config.sh
 You are now ready to start up the docker image
 
 ```
-./vessel start
+$ ./vessel start
 ```
 
-
+Check to see that everything started correctly 
 
 ```
 $ ./vessel ps
