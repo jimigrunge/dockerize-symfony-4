@@ -4,13 +4,28 @@ Docker setup for Symfony 4 development
 
 [![Build Status](https://secure.travis-ci.org/jimigrunge/dockerize-symfony-4y.png?branch=master)](http://travis-ci.org/jimigrunge/dockerize-symfony-4)
 
-# Prerequisites
+## Prerequisites
 
 [Docker](https://www.docker.com/)
 
 [Docker-sync](http://docker-sync.io/)
 
-# Installation
+
+## General disclaimer
+
+**Do not use on production.** This image is meant to be use for development purposes only, the use of it on a production environment is all up to your entire responsibility.
+
+## Includes
+
+- PHP-FPM
+- MySQL
+- Nginx
+- Redis
+- MailHog
+- Elasticsearch
+
+
+## Installation
 
 First, clone this repository:
 
