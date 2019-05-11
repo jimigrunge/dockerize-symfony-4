@@ -49,7 +49,6 @@ Now move to your projects dierectory
 
 ```
 $ cd base/directory/of/your/project/
-
 ```
 
 Run the initialization command to set up nessesary files
