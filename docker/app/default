@@ -1,0 +1,41 @@
+server {
+    listen 80 default_server;
+    server_name _;
+    root /var/www/html/public;
+    charset utf-8;
+
+    location = /favicon.ico { log_not_found off; access_log off; }
+    location = /robots.txt  { log_not_found off; access_log off; }
+
+    include h5bp/basic.conf;
+
+    client_max_body_size 100M;
+
+    location / {
+        # try to serve file directly, fallback to app.php
+        try_files $uri /index.php$is_args$args;
+    }
+
+    # PROD
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        fastcgi_param DOCUMENT_ROOT $realpath_root;
+        internal;
+    }
+
+    location ~ \.php$ {
+        return 404;
+    }
+
+    error_page 404 /index.php;
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    error_log /var/log/nginx/project_error.log;
+    access_log /var/log/nginx/project_access.log;
+}

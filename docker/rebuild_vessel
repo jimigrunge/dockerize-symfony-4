@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo '* Rebuilding the  development environment server.'
+echo '* * * * * * * * * * * * * * * * * * * * * * * * * * '
+
+cd $(pwd)
+
+if [[ -f vessel ]] ; then
+    ./vessel down
+    docker image rm vessel/app
+    docker image rm vessel/node
+    ./vessel build
+    ./vessel start
+else
+    echo '* vessel controller not found'
+    echo 'Exiting...'
+fi

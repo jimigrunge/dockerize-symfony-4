@@ -1,0 +1,76 @@
+# git config
+##################################
+# Files and folders to ignore.
+# Things listed here will be
+#  ignored by version control.
+##################################
+##################################
+# Environment Specific Files
+##################################
+.docker/
+.docker-sync/
+.env
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+##################################
+# Dynamic Docker files
+##################################
+.docker.env
+docker/data/dbdata/*
+!docker/data/dbdata/.gitkeep
+docker/data/redis/*
+!docker/data/redis/.gitkeep
+
+##################################
+# Auto generated files
+##################################
+composer.lock
+.phpstorm.meta.php
+/vendor
+
+##################################
+# Dynamic storage locations
+##################################
+logs/*
+cache/*
+uploads/*
+
+##################################
+# IDE files
+##################################
+# Intellij(PhpStorm)
+.idea/
+*.iws
+# Netbeans
+nbproject/
+nbproject/*
+# Eclipse
+.classpath
+.project
+.settings/
+
+##################################
+# OS generated files
+##################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~.nib
+*~
+
+
