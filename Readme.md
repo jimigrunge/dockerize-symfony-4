@@ -24,6 +24,9 @@ Docker setup for Symfony 4 development
 - MailHog
 - Elasticsearch
 
+## TODO
+
+Update to PHP 8
 
 ## Installation
 
